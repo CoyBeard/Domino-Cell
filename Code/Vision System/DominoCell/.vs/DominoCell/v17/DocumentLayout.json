@@ -1,0 +1,128 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Coy\\source\\repos\\DominoCell\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B60E8FB2-58EB-472C-B3A4-D9CCC80F2FAD}|DominoCell.csproj|c:\\users\\coy\\source\\repos\\dominocell\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B60E8FB2-58EB-472C-B3A4-D9CCC80F2FAD}|DominoCell.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B60E8FB2-58EB-472C-B3A4-D9CCC80F2FAD}|DominoCell.csproj|c:\\users\\coy\\source\\repos\\dominocell\\mlmodel1.mbconfig||{93FA4DC3-61EC-47AF-B0BA-50CAD3CAF049}",
+      "RelativeMoniker": "D:0:0:{B60E8FB2-58EB-472C-B3A4-D9CCC80F2FAD}|DominoCell.csproj|solutionrelative:mlmodel1.mbconfig||{93FA4DC3-61EC-47AF-B0BA-50CAD3CAF049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B60E8FB2-58EB-472C-B3A4-D9CCC80F2FAD}|DominoCell.csproj|c:\\users\\coy\\source\\repos\\dominocell\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B60E8FB2-58EB-472C-B3A4-D9CCC80F2FAD}|DominoCell.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B60E8FB2-58EB-472C-B3A4-D9CCC80F2FAD}|DominoCell.csproj|c:\\users\\coy\\source\\repos\\dominocell\\ipio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B60E8FB2-58EB-472C-B3A4-D9CCC80F2FAD}|DominoCell.csproj|solutionrelative:ipio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B60E8FB2-58EB-472C-B3A4-D9CCC80F2FAD}|DominoCell.csproj|c:\\users\\coy\\source\\repos\\dominocell\\runmlimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B60E8FB2-58EB-472C-B3A4-D9CCC80F2FAD}|DominoCell.csproj|solutionrelative:runmlimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 320,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Coy\\source\\repos\\DominoCell\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Coy\\source\\repos\\DominoCell\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T15:32:53.228Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Coy\\source\\repos\\DominoCell\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Coy\\source\\repos\\DominoCell\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AQIAAK0AAAAAAAAAAAAlwLkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T15:53:16.736Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RunMLImage.cs",
+              "DocumentMoniker": "C:\\Users\\Coy\\source\\repos\\DominoCell\\RunMLImage.cs",
+              "RelativeDocumentMoniker": "RunMLImage.cs",
+              "ToolTip": "C:\\Users\\Coy\\source\\repos\\DominoCell\\RunMLImage.cs",
+              "RelativeToolTip": "RunMLImage.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAAwFMAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T16:54:15.681Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IPIO.cs",
+              "DocumentMoniker": "C:\\Users\\Coy\\source\\repos\\DominoCell\\IPIO.cs",
+              "RelativeDocumentMoniker": "IPIO.cs",
+              "ToolTip": "C:\\Users\\Coy\\source\\repos\\DominoCell\\IPIO.cs",
+              "RelativeToolTip": "IPIO.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAgwEkAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T21:28:34.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MLModel1.mbconfig",
+              "DocumentMoniker": "C:\\Users\\Coy\\source\\repos\\DominoCell\\MLModel1.mbconfig",
+              "RelativeDocumentMoniker": "MLModel1.mbconfig",
+              "ToolTip": "C:\\Users\\Coy\\source\\repos\\DominoCell\\MLModel1.mbconfig",
+              "RelativeToolTip": "MLModel1.mbconfig",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|",
+              "WhenOpened": "2024-06-29T17:25:41.15Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 80,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

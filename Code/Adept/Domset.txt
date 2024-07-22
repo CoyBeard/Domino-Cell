@@ -1,0 +1,207 @@
+
+PROGRAM domset()
+	domx = 24
+	domy = 7.4
+	domxofset = 17
+	domyofset = 15
+	travelheight = 324 ;234
+	domplacez = 288 ;182
+	xmin = 165 ;150
+	xmax = 600
+	r1ymax = 200
+	r1ymin = -464
+	r2ymax = 350 :430
+	r2ymin = -220 ; -120
+	rtltyval = 0 ; -230
+	maxreach = 600
+	yhop = 15
+	robot = 1
+
+	DETACH ()
+	SELECT ROBOT = 1
+	ATTACH ()
+	SPEED 20
+	LEFTY
+	MOVE dsr1safepos
+	DETACH ()
+	SELECT ROBOT = 2
+	ATTACH ()
+	SPEED 20
+	RIGHTY
+	MOVE dsr2safepos
+
+    100
+	;Calculate center of dominos
+	centerx = ((xmax-xmin)/2)+xmin
+
+	IF robot == 1 THEN
+		;Calculate how many rows there will be
+		totalrows = INT ((r1ymax-r1ymin)/(domy+domyofset))
+	ELSE
+		totalrows = INT((r2ymax-r2ymin)/(domy+domyofset))
+	END
+
+	;Print calculated values
+	TYPE "centerX =", centerx
+	TYPE "totalrows =", totalrows
+
+	;if minrowx goes beyond xmin, set this to last successful minrowx 
+	;and use for all the rest minrowx
+	firstrowx = 0
+	;Also set the maximum dominos for those rows
+	maxdominrows = 0
+
+	;move to start pos
+	DETACH ()
+	IF robot == 1 THEN
+		SELECT ROBOT = 1
+	ELSE
+		SELECT ROBOT = 2
+	END
+	ATTACH ()
+	SPEED 50
+	ACCEL 80
+	IF robot == 1 THEN
+		LEFTY
+		MOVE dsr1safepos
+	ELSE
+		RIGHTY
+		MOVE dsr2safepos
+	END
+
+	;Go through each row, row number, to a point, 
+	;equals how many dominos in row
+	FOR row = 1 TO (totalrows)
+		;Find min x value
+
+		;IF row == 1 THEN
+		;minrowx = centerx
+		;ELSE
+		IF firstrowx == 0 THEN
+			minrowx = centerx-(((domx*(row))+(domxofset*(row-1)))/2)-(domx/2)
+
+			;If claculated value less then minimum the set to last
+			;good value
+			IF minrowx < xmin THEN
+				firstrowx = centerx- (((domx*(row-1))+(domxofset*(row-2)))/2)-(domx/2)
+				minrowx = firstrowx
+				maxdoninrows = row-1
+			END
+		ELSE
+			minrowx = firstrowx
+		END
+		;END
+		TYPE "min row(", row, ") x value = ", minrowx, " MaxDom = ", maxdominrows
+		
+		;if have not reached max dom in row then go by row number
+		IF maxdominows == 0 THEN
+			domnum = row
+		ELSE
+			domnum = maxdominrows
+		END
+		;go through each domino in row
+		FOR dom = 1 TO domnum
+			;Calc X Pos
+			domxpos = minrowx+((domx+domxofset)*(dom-1))
+			
+			;Calc Y Pos
+			IF robot == 1 THEN
+				domypos = r1ymax-((domy+domyofset)*(row-1))
+			ELSE
+				domypos = r2ymax-((domy+domyofset)*(row-1))
+			END
+
+			;Calc Z Pos
+			domzpos = travelheight
+
+			;Set Pos Var
+			SET dompos = TRANS(domxpos, domypos, domzpos,0,180,135)
+
+			TYPE "Dom#: ", dom, "(", domxpos, ", ", domypos, ", ", domzpos, 
+			
+			;If pos outside of mac reach, ignore
+			pointrad = SQRT(SQR(domxpos)+SQR(ABS(domypos)+yhop))
+			TYPE pointrad, " reach"
+
+			IF pointrad < maxreach THEN
+				;place domino
+				TYPE "waiting for domino.."
+				WAIT SIG(1001)
+				TYPE "domino ready, getting domino"
+
+				SPEED 100
+				ACCEL 180
+				IF robot == 1 THEN
+					LEFTY
+					MOVE dsr1ofdom
+				ELSE
+					RIGHTY
+					MOVE dsr2ofdom
+				END
+				WAIT.EVENT, 0.1
+				SPEED 50
+				IF robot == 1 THEN 
+					MOVES dsr1ondom
+					WAIT.EVENT, 0.2
+					SIGNAL 3001
+				ELSE
+					MOVES dsr2ondom
+					WAIT.EVENT, 0.2
+					SIGNAL 3002
+				END
+				WAIT.EVENT, 0.2
+				SIGNAL 2
+				WAIT.EVENT, 0.4
+				SIGNAL -2
+				IF robot == 1 THEN 
+					MOVES dsr1ofdom
+				ELSE
+					MOVES dsr2ofdom
+				END
+
+				IF donypos <= rtltyval THEN
+					LEFTY
+				ELSE
+					RIGHTY
+				END
+
+				ACCEL 150
+				SPEED 100
+				MOVE dompos
+
+				SPEED 100
+				DEPART -(travelheight-domplacez)
+				
+				;define point slightly behind donino on the Y to prevent 
+				;shake nocking over the placed domino
+				SET behinddom = SHIFT(dompos BY 0,-yhop,-(travelheight-domplacez))
+
+				WAIT.EVENT, 0.6
+				IF robot == 1 THEN
+					SIGNAL -3001
+				ELSE
+					SIGNAL-3002
+				END
+				;WAIT.EVENT, 0.02
+				SPEED 50
+				ACCEL 50
+				MOVES behinddom
+				;WAIT.EVENT, 0.1
+				ACCEL 100
+				SPEED 100
+				DEPART (travelheight-domplacez)
+
+				TYPE "placed domino"
+			END
+		END
+	END
+
+	IF robot == 1 THEN
+		LEFTY
+		MOVE dsr1safepos
+		robot = 2
+		GOTO 100
+	ELSE
+		RIGHTY
+		MOVE dsr2safepos
+	END
